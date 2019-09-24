@@ -1,0 +1,101 @@
+﻿<!-- 
+    1. Сделать собственные примеры методов применяемых для массивов.
+
+    2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+    3. Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+
+    4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей / города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. Объединить данные из двух массивов и вывести их в одну строку. 
+    
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+    <script>
+        let mycars = [["Subaru", 3],
+            ["Volvo", 43],
+            ["BMW", 32],
+            ["Lexus", 99],
+        ["Audi", 67]];
+        console.log("Все элементы массива: " , mycars);
+        console.log(mycars.length);
+        console.log('######################');
+
+        let newcars = [["Porshe", 3],
+            ["Mers", 43],
+            ["Cirtoen", 32]];
+
+        let cars = mycars.unshift(["Toyota", 65]);
+        console.log('unshift ' , mycars);
+
+        let mynewcars = mycars.concat(newcars);
+        console.log('concat ', mynewcars);
+
+        console.log('######################');
+        mycars.pop();
+        console.log('pop ', mynewcars);
+        console.log('######################');
+
+        mycars.forEach((item, index) => {
+            alert(`${item} имеет позицию ${index}`);
+        });
+        console.log('######################');
+
+        let carlist = mycars.join(' ; ');
+        console.log('join ' + carlist);
+
+
+        console.log('######################');
+
+        mycars = mycars.reverse();
+        console.log('reverse', mycars)
+        console.log('любимая модель' , mynewcars[5][0]);
+
+    </script>
+
+
+    <script>
+
+    let myArray = [1,2,3,4,5,6,7,8];
+    console.log(myArray);
+    let a = +prompt('Введите номер элемента');
+    myArray.splice(a, 0, 'ля-ля-ля');
+    console.log(myArray);
+
+    //если ввести номер больше, то значение подставляется после последнего в массиве
+    </script>
+
+    <script>
+
+        let myArray = [];
+        let a = +prompt('Введите размер массива');
+
+        for ( let i = 0; i <= a; i++){
+            if (i % 2 != 0){
+                myArray.push(['odd','odd','odd']);
+                console.log(myArray);
+            } else{
+                myArray.push(['even', 'even', 'even']);
+                console.log(myArray);
+            }
+        }
+    </script>
+
+    <script>
+        let cities = ['Barcelona', 'Duprovnik', 'Praga' , 'Split' , 'Rio'];
+        let population = [ 1273934 , 8592723672, 7699533 , 665000961652 , 9000000000000000001];
+
+        let travel = cities.concat(population);
+        console.log( travel);
+        let trav = travel.join();
+        console.log(trav);
+
+    </script>
+      
+</head>
+<body>
+</body>
+</html>
